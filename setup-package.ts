@@ -21,7 +21,7 @@ function main() {
   sourceObj.devDependencies = {};
   fs.writeFileSync(`${destinationDirectory}/package.json`, Buffer.from(JSON.stringify(sourceObj, null, 2), "utf-8"));
   // Copy additional files from source to destination
-  const filesToCopy = ["README.md", "LICENSE.md", ".npmignore"];
+  const filesToCopy = ["README.md", ".npmignore"];
   filesToCopy.forEach(file => fs.copyFileSync(`${sourceDirectory}/${file}`, `${destinationDirectory}/${file}`));
 }
 

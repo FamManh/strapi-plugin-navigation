@@ -1,5 +1,5 @@
 {
-  "name": "strapi-plugin-navigation",
+  "name": "@viconsol/plugin-navigation",
   "version": "2.2.16",
   "description": "Strapi - Navigation plugin",
   "strapi": {
@@ -13,7 +13,7 @@
     "url": "https://github.com/VirtusLab/strapi-plugin-navigation"
   },
   "scripts": {
-    "publish:latest": "cd build && npm publish --tag latest",
+    "publish:latest": "cd build && npm publish --tag latest --access=public",
     "prepublish:latest": "npm run clean && npm run build && node build/setup-package.js",
     "test:unit": "jest --verbose --coverage",
     "build": "tsc",
