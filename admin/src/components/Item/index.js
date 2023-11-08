@@ -62,7 +62,8 @@ const Item = (props) => {
   const isNextMenuAllowedLevel = isNumber(allowedLevels) ? level < (allowedLevels - 1) : true;
   const isMenuAllowedLevel = isNumber(allowedLevels) ? level < allowedLevels : true;
   const hasChildren = !isEmpty(item.items) && !isExternal && !displayChildren;
-  const absolutePath = isExternal ? undefined : `${levelPath === '/' ? '' : levelPath}/${path === '/' ? '' : path}`;
+  // const absolutePath = isExternal ? undefined : `${levelPath === '/' ? '' : levelPath}/${path === '/' ? '' : path}`;
+  const absolutePath = isExternal ? undefined : path;
 
   const relatedItemLabel = !isExternal ? extractRelatedItemLabel(relatedRef, contentTypesNameFields, { contentTypes }) : '';
   const relatedTypeLabel = relatedRef?.labelSingular;

@@ -130,7 +130,7 @@ const NavigationHeader = ({
       }
       title={formatMessage({
         id: getTrad('header.title'),
-        defaultMessage: 'UI Navigation',
+        defaultMessage: 'Navigation',
       })}
       subtitle={formatMessage({
         id: getTrad('header.description'),

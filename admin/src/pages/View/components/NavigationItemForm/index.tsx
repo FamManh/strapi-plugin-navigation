@@ -114,19 +114,20 @@ const NavigationItemForm: React.FC<NavigationItemFormProps> = ({
   })), [availableAudience]);
 
   const generatePreviewPath = () => {
-    if (!isExternal) {
-      const itemPath = isEmpty(formik.values.path) || formik.values.path === '/'
-        ? getDefaultPath()
-        : formik.values.path || "";
+    return null 
+    // if (!isExternal) {
+    //   const itemPath = isEmpty(formik.values.path) || formik.values.path === '/'
+    //     ? getDefaultPath()
+    //     : formik.values.path || "";
       
-      const value = `${data.levelPath !== '/' ? `${data.levelPath}` : ''}/${itemPath}`;
-      return {
-        id: getTradId('popup.item.form.type.external.description'),
-        defaultMessage: '',
-        values: { value }
-      }
-    }
-    return null;
+    //   const value = `${data.levelPath !== '/' ? `${data.levelPath}` : ''}/${itemPath}`;
+    //   return {
+    //     id: getTradId('popup.item.form.type.external.description'),
+    //     defaultMessage: '',
+    //     values: { value }
+    //   }
+    // }
+    // return null;
   };
 
   const getDefaultTitle =
