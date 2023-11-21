@@ -1,6 +1,6 @@
 {
   "name": "@viconsol/plugin-navigation",
-  "version": "2.2.16",
+  "version": "2.2.17",
   "description": "Strapi - Navigation plugin",
   "strapi": {
     "name": "navigation",
@@ -13,7 +13,7 @@
     "url": "https://github.com/VirtusLab/strapi-plugin-navigation"
   },
   "scripts": {
-    "publish:latest": "cd build && npm publish --tag latest --access=public",
+    "publish:latest": "cd build && npm publish --access=public",
     "prepublish:latest": "npm run clean && npm run build && node build/setup-package.js",
     "test:unit": "jest --verbose --coverage",
     "build": "tsc",
@@ -21,9 +21,10 @@
     "clean": "rm -rf build",
     "develop": "nodemon --exec \"npm run build:dev\""
   },
+  "types": "./types/index.d.ts",
   "dependencies": {
     "@sindresorhus/slugify": "1.1.0",
-    "@strapi/utils": "^4.14.2",
+    "@strapi/utils": "^4.15.4",
     "lodash": "^4.17.21",
     "pluralize": "^8.0.0",
     "react": "^18.2.0",
@@ -81,8 +82,8 @@
     }
   ],
   "engines": {
-    "node": ">=16.0.0 <=20.x.x",
-    "npm": ">=7.x.x"
+    "node": ">=18.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
   },
   "nodemonConfig": {
     "ignore": [

@@ -94,7 +94,7 @@ const NavigationItemForm: React.FC<NavigationItemFormProps> = ({
       type: get(data, "type", formDefinition.defaultValues.type),
       related: get(data, "related.value", formDefinition.defaultValues.related),
       relatedType: get(data, "relatedType.value", formDefinition.defaultValues.relatedType),
-      audience: get(data, "audience", formDefinition.defaultValues.audience).map((item: Audience | Id) => isObject(item) ? item.id : item),
+      audience: get(data, "audience", formDefinition.defaultValues.audience).map((item: Audience | Id) => isObject(item) ? item.id.toString() : item.toString()),
       additionalFields: getDefaultCustomFields({
         additionalFields,
         customFieldsValues: get(data, "additionalFields", []),
@@ -222,7 +222,7 @@ const NavigationItemForm: React.FC<NavigationItemFormProps> = ({
       return isString(title) && !isEmpty(title) ? await slugify(title).then(prop("slug")) : undefined;
     } else if (related) {
       const relationTitle = extractRelatedItemLabel({
-        ...contentTypeEntities.find(_ => _.id === related),
+        ...contentTypeEntities.find(_ => String(_.id) === String(related)),
         __collectionUid: relatedType
       }, contentTypesNameFields, { contentTypes });
       return isString(relationTitle) && !isEmpty(relationTitle) ? await slugify(relationTitle).then(prop("slug")) : undefined;
